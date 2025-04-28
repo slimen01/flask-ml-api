@@ -2,3 +2,4 @@ Flask==2.2.5
 torch>=2.0.0
 # torchvision>=0.15.0   # si tu utilises aussi torchvision
 numpy>=1.24.0
+pip freeze > requirements.txt
