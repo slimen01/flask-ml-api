@@ -1,7 +1,7 @@
 import torch
 from flask import Flask, request, jsonify
 from PIL import Image
-
+import os
 # Charger le modèle
 model = torch.load('best.pt', map_location=torch.device('cpu'), weights_only=False)
 
@@ -34,4 +34,4 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
